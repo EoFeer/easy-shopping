@@ -1,0 +1,231 @@
+/*CURIOSIDADE
+
+- A unidade de medida "vh" é realmente utilizada para definir
+  a altura em relação à altura visível da tela, ou seja, 100vh
+  seria equivalente a 100% da altura visível da tela. 
+
+- Quando usar: As unidades vw e vh são relativas às dimensões do
+  viewport (a área visível na tela do dispositivo). 
+  Elas são especialmente úteis para criar layouts responsivos. 
+  O vw representa a porcentagem da largura do viewport, enquanto o
+  vh representa a porcentagem da altura.
+
+  CURIOSIDADE DISPLAY
+  display: none 
+
+  -quando utilizamos display: none , estamos dizendo que o elemento
+não deve ser exibido na página, ou seja, ele fica invisível e não
+ocupa espaço.
+
+  CURIOSIDADE VALOR 
+  "auto"
+
+  -quando utilizamos o valor para a propriedade de "auto" , estamos dizendo
+para a propriedade se adptar automaticamente 
+
+EX 
+
+  width: "auto";
+
+TRUQUE PARA ALINHAR BUTTON CENTER
+  -Para alinhar o botão no centro , o display tem que ser block!
+   E a margin right e left tem que ser auto[automatico]
+  
+  display: block;
+  margin: 0 auto; 
+
+   
+  CURIOSIDADE MEDIA QUERIES 
+
+  CHROME
+  -Capaz de ver cada tamanho para cada dispositivo por pixels 
+   Usando a Função Inspecionar e CNTRL + SHIFT + M  
+   
+   MEDIA QUERIES 
+   ir Vendo cada Dispositivo em Função Inspecionar e Criando outros
+   Media Queries para cada tamanho de Dispositivo
+   Pelo Pixels width do Dispositivo  
+
+   EX 
+
+
+  @media screen and (max-width: 330px) {
+  .container-left{
+    height: 70%;
+  }
+
+}
+
+  @media screen and (max-width: 440px) {
+    .container-left{
+      height: 70%;
+    }
+
+  }
+
+  @media screen and (max-width: 430px) {
+    .container-left{
+      height: 50%;
+      margin-top: 100px;
+    }
+
+
+  }
+
+    SITE CONVERSOR DE CORES
+    (converter RGB em HEX/Converter HEX em RGB)
+    https://www.peko-step.com/pt/tool/tfcolor.html
+    -Caso necessite converter rgb ou hex procurar conversor de Cores
+
+
+    rgba(RED , GREEN , BLUE E OPACITY)
+    -este último parâmetro, você regula a opacidade. 
+    -rgba você pode variar o alpha de 0 a 1, sendo 1 - 100% opaco 
+     e 0 - transparente.
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Oswald", sans-serif;
+  color: #5d5d7d;
+  font-weight: 400;
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+}
+
+.container-left {
+  display: inline-block;
+  width: 60%;
+  padding-left: 136px;
+  margin-top: 25%;
+}
+
+.container-right {
+  display: inline-block;
+  background-color: rgba(93, 93, 125, 0.16);
+  /*rgba(RED , GREEN , BLUE E OPACITY)*/
+  height: 100vh;
+  width: 40%;
+  position: absolute;
+}
+
+img {
+  position: relative;
+  top: 20%;
+  right: 130px;
+}
+
+h1 {
+  font-size: 70px;
+  line-height: 80px;
+  width: 368px;
+}
+
+p {
+  font-size: 28px;
+  line-height: 48px;
+  width: 540px;
+  opacity: 0.6;
+  margin: 15px 0;
+}
+
+button {
+  width: 269px;
+  height: 62px;
+  color: #fff;
+  text-align: center;
+  font-size: 24px;
+  line-height: 36px;
+  border: none;
+  background: #9499ea;
+  border-radius: 30px;
+  box-shadow: 0px 10px 24px rgba(148, 153, 234, 0.1);
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+button:active {
+  opacity: 0.5;
+}
+
+a {
+  font-size: 28px;
+  line-height: 41px;
+  margin-right: 41px;
+  cursor: pointer;
+}
+
+a:nth-child(2) {
+  opacity: 0.4;
+}
+
+a:hover {
+  opacity: 0.4;
+}
+
+a:active {
+  opacity: 0.8;
+}
+
+header {
+  margin: 24px 0 0 57px;
+}
+
+@media screen and (max-width: 900px) {
+  .container-left {
+    width: 100%;
+    height: 50%;
+    padding: 0;
+    margin: 0;
+  }
+  .container-right {
+    display: block;
+    height: auto;
+    width: 100%;
+    position: static;
+    padding: 40px;
+  }
+
+  img {
+    position: static;
+    max-width: 90%;
+  }
+
+  header {
+    display: none;
+  }
+
+  h1 {
+    font-size: 36px;
+    line-height: 52px;
+    width: auto;
+    margin: 58px 50px 0 50px;
+    text-align: center;
+  }
+
+  p {
+    margin: 15px 40px;
+    width: auto;
+    text-align: center;
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  button{
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 330px) {
+  .container-left{
+    height: 70%;
+  }
+}
